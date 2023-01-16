@@ -17,7 +17,6 @@ num_ftrs = model_ft.classifier[0].out_features
 model_ft.fc = nn.Linear(num_ftrs, 2)
 
 model_ft.load_state_dict(torch.load('model.pth'))
-model_ft = model_ft.to('cuda')
 
 # image transfromer
 converter = transforms.Compose([
@@ -36,7 +35,7 @@ hide_default_format = """
 st.markdown(hide_default_format, unsafe_allow_html=True)
 
 st.title('Venomous or Non Venomous Snake Prediction')
-st.write('This prediction is 87% accurate')
+st.write('This prediction is 80% accurate')
 
 file = st.file_uploader("Insert snake picture", type=["jpg", "jpeg", "png"])
 
