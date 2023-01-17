@@ -51,7 +51,6 @@ if file is not None:
     image = Image.open(file)
 
     tensor_img = converter(image)
-    tensor_img = tensor_img.unsqueeze(0).to('cuda')
 
     # predictions
     model_ft.eval()
